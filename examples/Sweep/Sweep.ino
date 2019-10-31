@@ -15,7 +15,7 @@
 VarSpeedServo myservo;  // create servo object to control a servo 
                         // a maximum of eight servo objects can be created 
  
-const int servoPin = 9; // the digital pin used for the servo
+const int servoPin = 7; // the digital pin used for the servo
  
 void setup() { 
   myservo.attach(servoPin);  // attaches the servo on pin 9 to the servo object

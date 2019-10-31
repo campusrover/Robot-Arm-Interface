@@ -11,13 +11,13 @@ using [VarSpeedServo](https://github.com/netlabtoolkit/VarSpeedServo) Library as
 
 Functionality so far
 
-##### Getting Arm to Move
+#### Getting Arm to Move
 
 (provided)  Sweep Controls Servo on Port 7
 
 (provided) *RobotArmScript* Arduino Program to control rest of the Arm
 
-##### Getting Arduino to talk to Rasberry Pi
+#### Getting Arduino to talk to Rasberry Pi
 
 *(provided)  ArmArduinoV1*, lets the Arduino talk to the Pi
 
@@ -27,11 +27,61 @@ Functionality so far
 
 ![V1 Where Arduino can talk to Pi](extras/V1.png)
 
+#### **Getting Rasberry Pi to Talk to Arduino**
 
+(provided)  ArmArduinoV2*, lets the Arduino talk to the Pi
 
-Links fix Arduino download error https://www.arduino.cc/en/Guide/Linux
+*(provided)  PiArduinoV2* lets the Pi talk to the Arduino
 
-Get Arduino to listen to Serial https://www.instructables.com/id/Connect-Your-Raspberry-Pi-and-Arduino-Uno/
+​	It sends a serial command to the Arduino, which reads it and moves the servo
 
-Get Pi to talk to Serial https://pyserial.readthedocs.io/en/latest/shortintro.html
+​	![PiAQrduinoV2 Script](V2Script.png)
+
+#### **Workflow improvements**			
+
+​		Now that the basic premise was set up, I remounted the Servo Arm onto a robot chassis. Also, I can log into the mutant robot and execute python scripts over ssh. 
+
+​				`ls /dev/tty*`		Lists available USb ports, look for USB 0
+
+​				`ssh mutant@mutant.dyn.brandeis.edu 'python' < '/home/robot/Arduino/libraries/Robot-Arm-Interface/extras/ArmPiV1.py'`      Executes a python file on ssh without copying that file to the mutant rasberry Pi, 40 second time lag
+
+​		These workflow improvements should allow me to test the arm much more quickly than plugging in to the mutant and and plugging in the arm etc.
+
+​			![Condensed Arm](ArmCondensed.jpg)
+
+​		Also, I am running the commands on the mutant robot, where the arm now has a port.
+
+#### **Two Way Communication**
+
+​		*ArmArduinoV3*, Opens the gripper if receives o character over serial, closes if c character
+
+​		*PiArduinoV3* Sends the open and close characters, also two way communication
+
+​		This is the simplest expression of the interface required for the final project.
+
+​			First, we check that the arm shows up in hte list of USB ports as USB 0
+
+​					![USB Ports Demonstration](USBV3.gif)
+
+​		Then, we run the ArmPiV3 script over ssh, which moves the arm and displays output
+
+​					![Output of V3](OutputV3.gif)
+
+​			Finally, the servo opens and closes!
+
+![Servo MovingV3](ServoMovingV3.gif)
+
+#### Future Work
+
+​			The main future goal is to interface the arm to ROS. In the short term, I want to decrease the lag, enable the arm to respond to keyboard input, and get the arm fixed.				
+
+**Sources**			
+
+[1] Links fix Arduino download error https://www.arduino.cc/en/Guide/Linux
+
+[2] Get Arduino to listen to Serial https://www.instructables.com/id/Connect-Your-Raspberry-Pi-and-Arduino-Uno/
+
+[3]Get Pi to talk to Serial https://pyserial.readthedocs.io/en/latest/shortintro.html
+
+[4] Run a Python File remotely https://www.shellhacks.com/ssh-execute-remote-command-script-linux/
 
