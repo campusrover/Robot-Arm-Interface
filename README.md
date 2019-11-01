@@ -71,6 +71,10 @@ Functionality so far
 
 ![Servo MovingV3](ServoMovingV3.gif)
 
+​					Here is a video of this stage:
+
+​						 [![Shows Python file controlling gripper on  arm](http://img.youtube.com/vi/m0WW0uCtgWg/0.jpg)](http://www.youtube.com/watch?v=m0WW0uCtgWg "Two Way Arm Interfacing Video")
+
 #### Future Work
 
 ​			The main future goal is to interface the arm to ROS. In the short term, I want to decrease the lag, enable the arm to respond to keyboard input, and get the arm fixed.				
