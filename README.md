@@ -25,7 +25,7 @@ Functionality so far
 
 ​					Screenshot showing Message from Arduino being printed on Rasberry Pi
 
-![V1 Where Arduino can talk to Pi](extras/V1.png)
+![V1 Where Arduino can talk to Pi](docs/V1.png)
 
 #### **Getting Rasberry Pi to Talk to Arduino**
 
@@ -35,7 +35,7 @@ Functionality so far
 
 ​	It sends a serial command to the Arduino, which reads it and moves the servo
 
-​	![PiAQrduinoV2 Script](V2Script.png)
+​	![PiAQrduinoV2 Script](docs/V2Script.png)
 
 #### **Workflow improvements**			
 
@@ -47,7 +47,7 @@ Functionality so far
 
 ​		These workflow improvements should allow me to test the arm much more quickly than plugging in to the mutant and and plugging in the arm etc.
 
-​			![Condensed Arm](ArmCondensed.jpg)
+​			![Condensed Arm](docs/ArmCondensed.jpg)
 
 ​		Also, I am running the commands on the mutant robot, where the arm now has a port.
 
@@ -61,19 +61,21 @@ Functionality so far
 
 ​			First, we check that the arm shows up in hte list of USB ports as USB 0
 
-​					![USB Ports Demonstration](USBV3.gif)
+​					![USB Ports Demonstration](docs/USBV3.gif)
 
 ​		Then, we run the ArmPiV3 script over ssh, which moves the arm and displays output
 
-​					![Output of V3](OutputV3.gif)
+​					![Output of V3](docs/OutputV3.gif)
 
 ​			Finally, the servo opens and closes!
 
-![Servo MovingV3](ServoMovingV3.gif)
+![Servo MovingV3](docs/ServoMovingV3.gif)
 
 ​					Here is a video of this stage:
 
 ​						 [![Shows Python file controlling gripper on  arm](http://img.youtube.com/vi/m0WW0uCtgWg/0.jpg)](http://www.youtube.com/watch?v=m0WW0uCtgWg "Two Way Arm Interfacing Video")
+
+
 
 #### Future Work
 
