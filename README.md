@@ -93,7 +93,7 @@ This week, I focused on the hardware of the arm, taking it apart, putting it bac
 
 ​	Then, I mounted the arm on the mutant, note how there is enough clearance for the lidar because of the 	washers I added:
 
-![New Waffle level showing clearance for arm](/home/robot/catkin_ws/src/arminterface/docs/LidarMount.gif)
+![New Waffle level showing clearance for arm](docs/LidarMount.gif)
 
 ​	Version 4 of my scripts allow mulktiple parts of the arm to be controlled, shown here is the console output and robot motion.
 
