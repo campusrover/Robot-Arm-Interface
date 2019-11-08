@@ -11,6 +11,8 @@ using [VarSpeedServo](https://github.com/netlabtoolkit/VarSpeedServo) Library as
 
 Functionality so far
 
+### Oct 25-31:
+
 #### Getting Arm to Move
 
 (provided)  Sweep Controls Servo on Port 7
@@ -43,7 +45,7 @@ Functionality so far
 
 ​				`ls /dev/tty*`		Lists available USb ports, look for USB 0
 
-​				`ssh mutant@mutant.dyn.brandeis.edu 'python' < '/home/robot/Arduino/libraries/Robot-Arm-Interface/extras/ArmPiV1.py'`      Executes a python file on ssh without copying that file to the mutant rasberry Pi, 40 second time lag
+​				`ssh mutant@mutant.dyn.brandeis.edu 'python' < '/home/robot/catkin_ws/src/arminterface/Raspi/ArmPiV4.py'`      Executes a python file on ssh without copying that file to the mutant rasberry Pi, 40 second time lag
 
 ​		These workflow improvements should allow me to test the arm much more quickly than plugging in to the mutant and and plugging in the arm etc.
 
@@ -79,7 +81,33 @@ Functionality so far
 
 #### Future Work
 
-​			The main future goal is to interface the arm to ROS. In the short term, I want to decrease the lag, enable the arm to respond to keyboard input, and get the arm fixed.				
+​			The main future goal is to interface the arm to ROS. In the short term, I want to decrease the lag, enable the arm to respond to keyboard input, and get the arm fixed
+
+### Nov 1-7:
+
+This week, I focused on the hardware of the arm, taking it apart, putting it back together, and mounting it to the Mutant Robot. Version 4 of the Arduino and Pi scripts show updated functionality, where the whole arm can be controlled.
+
+​	First, I replaced the broken motors on the arm, this shows the base motor rotating after I lined it up again 	absolute position matters for servos):
+
+![The Gears of the base of the arm](docs/BaseMechanics.gif)
+
+​	Then, I mounted the arm on the mutant, note how there is enough clearance for the lidar because of the 	washers I added:
+
+![New Waffle level showing clearance for arm](/home/robot/catkin_ws/src/arminterface/docs/LidarMount.gif)
+
+​	Version 4 of my scripts allow mulktiple parts of the arm to be controlled, shown here is the console output and robot motion.
+
+![The Console inder Version 4](docs/V4Console.png)
+
+![Arm Mounted on Robot](docs/ArmMount.gif)
+
+A video of this week's work can be found [here](https://www.youtube.com/watch?v=U1VSVlQWPBY) 
+
+**Future Work:**
+
+By Next week, I will have communicated with Charlie about the battery and broken motors, and plugged the arm into a publisher/subscriber model in ROS. The deliverable will be a video of me moving the arm as I did this week but with ROS scripts.
+
+​				
 
 **Sources**			
 
