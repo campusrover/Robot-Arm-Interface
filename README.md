@@ -107,7 +107,21 @@ A video of this week's work can be found [here](https://www.youtube.com/watch?v=
 
 By Next week, I will have communicated with Charlie about the battery and broken motors, and plugged the arm into a publisher/subscriber model in ROS. The deliverable will be a video of me moving the arm as I did this week but with ROS scripts.
 
-​				
+### Nov 8-15
+
+​	Current projects: Charlie is remounting the arm
+
+​	I'm looking into writing auto boot up ssh script for pi, and gazebo simulation
+
+Links http://gazebosim.org/tutorials/?tut=ros_urdf http://wiki.ros.org/joint_trajectory_controller Pito doesn;t like https://answers.ros.org/question/38694/running-ros-across-multiple-machines/
+
+Trying to get positon from servos, Charly convinced me there is no way to get position because there is no position wire.
+
+http://forums.trossenrobotics.com/tutorials/how-to-diy-128/get-position-feedback-from-a-standard-hobby-servo-3279/
+
+Arm is Moving function eixst in varspeedservo
+
+http://forums.trossenrobotics.com/tutorials/how-to-diy-128/get-position-feedback-from-a-standard-hobby-servo-3279/
 
 **Sources**			
 
