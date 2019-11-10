@@ -113,7 +113,29 @@ By Next week, I will have communicated with Charlie about the battery and broken
 
 ​	I'm looking into writing auto boot up ssh script for pi, and gazebo simulation
 
+Sssh Script problem: It seems that running roscore in ssh command doesn't work even though it works in an interactie session. i tired allowing mutant to allow userenviornment variables, but the problem persists. Even though i haven't figured anything out, i am learning a lot about linux and how to use vim. I also tried specifying hte exact directory location of roscore file, but I go tthis error https://www.howtoforge.com/vim-basics
+
+SSH Commands manual https://www.freebsd.org/cgi/man.cgi?sshd_config(5)
+
+Edit read only file in vimhttps://www.geekyboy.com/archives/629
+
+Hoe to use vim https://www.howtoforge.com/vim-basics
+
 Links http://gazebosim.org/tutorials/?tut=ros_urdf http://wiki.ros.org/joint_trajectory_controller Pito doesn;t like https://answers.ros.org/question/38694/running-ros-across-multiple-machines/
+
+Non interactive shell information https://www.howtoforge.com/vim-basics https://www.howtoforge.com/vim-basicsS
+
+Permit user enviornmet https://stackoverflow.com/questions/10562722/command-not-found-via-ssh-with-single-command-found-after-connecting-to-termina
+
+Remote run ROS https://askubuntu.com/questions/1156507/cannot-perform-command-after-remote-logging-in-via-ssh
+
+
+
+Run remote rs node https://github.com/pandora-auth-ros-pkg/pandora_docs/wiki/Remote-Machines-Running-ROS-nodes
+
+How turtlbebot handles erial connections https://github.com/ros-drivers/rosserial/blob/melodic-devel/rosserial_python/nodes/serial_node.py
+
+Error with running ros I got https://answers.ros.org/question/310848/run_id-on-parameter-server-does-not-match-declared-run_id/
 
 Trying to get positon from servos, Charly convinced me there is no way to get position because there is no position wire.
 

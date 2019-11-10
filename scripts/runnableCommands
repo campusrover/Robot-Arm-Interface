@@ -1,0 +1,30 @@
+`ssh mutant@mutant.dyn.brandeis.edu 'bash' < '/home/robot/catkin_ws/src/arminterface/scripts/mutantStartup.sh'`
+
+ssh mutant@mutant.dyn.brandeis.edu "bash --login -c 'roscore'"
+ssh mutant@mutant.dyn.brandeis.edu 'source /opt/ros/kinetic/setup.bash;roscore'
+
+ssh mutant@mutant.dyn.brandeis.edu 'source /opt/ros/kinetic/setup.bash;roslaunch turtlebot3_bringup turtlebot3_robot.launch'
+
+
+ ssh mutant@mutant.dyn.brandeis.edu 'source /opt/ros/kinetic/setup.bash;export TURTLEBOT3_MODEL=waffle;roslaunch ~/catkin_ws/src/turtlebot3/turtlebot3_bringup/launch/turtlebot3_robot.launch'
+
+alias eb='nano ~/.bashrc'
+alias sb='source ~/.bashrc'
+alias gs='git status'
+alias gp='git pull'
+alias cw='cd ~/catkin_ws'
+alias cs='cd ~/catkin_ws/src'
+alias cm='cd ~/catkin_ws && catkin_make'
+alias bu='roslaunch turtlebot3_bringup turtlebot3_robot.launch'
+alias bu-mutant='roslaunch cr_ros_2 mtnt_onb_rpicam.launch'
+alias internet='chromium-browser'
+source /opt/ros/kinetic/setup.bash
+source ~/catkin_ws/devel/setup.bash
+export ROS_MASTER_URI=http://mutant.dyn.brandeis.edu:11311
+#export ROS_MASTER_URI=http://localhost:11311
+#export ROS_IP=129.64.243.63
+export ROS_HOSTNAME=mutant.dyn.brandeis.edu
+export TB3_MODEL=waffle
+export TURTLEBOT3_MODEL=waffle
+# Test without namespacing
+# export ROS_NAMESPACE=mutant

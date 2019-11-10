@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import rospy
+import time
 import serial
 from std_msgs.msg import String
 
@@ -15,13 +16,18 @@ def sendCommand (characterCommand):
 	print "ARM:"+ser.readline()
 	time.sleep(1)
 
-ser=serial.Serial("/dev/ttyUSB1",9600)
-ser.baudrate=9600
-time.sleep(5)
+try:
+	ser=serial.Serial("/dev/ttyUSB1",9600)
+	
+	ser.baudrate=9600
+	time.sleep(5)
 
-print("PI:Starting Sequence")
-rospy.init_node('topic_subscriber')
-sub = rospy.Subscriber('armcommand', String, callback)
+	print("PI:Starting Sequence")
+	rospy.init_node('topic_subscriber')
+	sub = rospy.Subscriber('armcommand', String, callback)
 
-# Wait for published topics, exit on ^c
-rospy.spin()
+	# Wait for published topics, exit on ^c
+	rospy.spin()
+except:
+	print "Error, USB is not plugged in"
+	time.sleep(5)

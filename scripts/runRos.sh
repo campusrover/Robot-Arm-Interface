@@ -17,5 +17,5 @@ for f in *.py; do
     gnome-terminal --geometry 73x31+$count+0 -- /bin/sh -c 'export ROS_MASTER_URI=http://localhost:11311;chmod +x '$f';python '$f
 done
 #close terminal windows after X  seconds
-sleep 20
+sleep 200
 pkill gnome-terminal-
