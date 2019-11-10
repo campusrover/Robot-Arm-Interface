@@ -54,7 +54,7 @@ void moveArm(char c){
    moveArmElement(elbowServo,180,0);
   }else if (c=='f'){
     Serial.println("Moving Finger");
-    moveArmElement(fingerServo,180,35);
+    moveArmElement(fingerServo,35,160);
   }else if (c=='b'){
     Serial.println("Moving Base");
     moveArmElement(baseServo,180,0);
