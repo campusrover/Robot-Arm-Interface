@@ -48,13 +48,13 @@ void loop() {
 void moveArm(char c){
   if(c=='s'){
     Serial.println("Moving Shoulder");
-    moveArmElement(shoulderServo,180,0);
+    moveArmElement(shoulderServo,180,90);
   }else if (c=='e'){
     Serial.println("Moving Elbow");
    moveArmElement(elbowServo,180,0);
   }else if (c=='f'){
     Serial.println("Moving Finger");
-    moveArmElement(fingerServo,180,100);
+    moveArmElement(fingerServo,180,35);
   }else if (c=='b'){
     Serial.println("Moving Base");
     moveArmElement(baseServo,180,0);
