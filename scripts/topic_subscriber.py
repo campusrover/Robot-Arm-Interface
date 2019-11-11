@@ -12,26 +12,28 @@ from std_msgs.msg import String
 
 # define function is called each time the message is published (by some other node)
 def callback(msg):
-   print ("I recieved command: " + str(msg.data))
-   print ("apple")
-   sendCommand(msg.data)
+  	print ("\tPI:recieved command: " + str(msg.data))
+   	sendCommand(msg.data)
 
 
 def sendCommand (characterCommand):
-	print "a"
 	ser.write(characterCommand)
-	print "b"
-	print ("ARM:"+ser.readline())
-	time.sleep(1)
-	print "c"
-
+	response=ser.readline()
+	if response:
+		print ("\tARM:"+ response)
+	else:
+		print ("\tElement did not respond in time")
+	print("")
 try:
-	ser=serial.Serial("/dev/ttyUSB1",9600)
-	
+	ser=serial.Serial("/dev/ttyUSB2",9600,timeout=5)	
 	ser.baudrate=9600
-	time.sleep(5)
+	print("Starting Serial Connection")
 
 	print("PI:Starting Sequence")
+	#consume Arduino wellcome message
+	print(ser.readline())
+	print(ser.readline())
+
 	rospy.init_node('topic_subscriber')
 	sub = rospy.Subscriber('armcommand', String, callback)
 
