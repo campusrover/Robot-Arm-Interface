@@ -2,6 +2,7 @@
 # Don't forget to chmod +x topic_publisher.py
 
 import rospy
+import random
 from std_msgs.msg import String
 
 # Make this into a ROS node.
@@ -19,6 +20,8 @@ command='f'
 
 # loop until ^c
 while not rospy.is_shutdown():
+    #make command random
+    command=random.choice("sfb")
     if len(command)!=1:
         print "The Message is too big"
     else:

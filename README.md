@@ -115,6 +115,10 @@ By Next week, I will have communicated with Charlie about the battery and broken
 
 Sssh Script problem: It seems that running roscore in ssh command doesn't work even though it works in an interactie session. i tired allowing mutant to allow userenviornment variables, but the problem persists. Even though i haven't figured anything out, i am learning a lot about linux and how to use vim. I also tried specifying hte exact directory location of roscore file, but I go tthis error https://www.howtoforge.com/vim-basics
 
+
+
+Update: I wrote the bringup and roscore scri[t and it works over ssh, the amr moves using orstopic publisher and subscirber, subscriber has nice error handline llike if usb times out. Future work: get subscriber node to run remotly, (I still have to ssh in todo that)
+
 SSH Commands manual https://www.freebsd.org/cgi/man.cgi?sshd_config(5)
 
 Edit read only file in vimhttps://www.geekyboy.com/archives/629
@@ -144,6 +148,18 @@ http://forums.trossenrobotics.com/tutorials/how-to-diy-128/get-position-feedback
 Arm is Moving function eixst in varspeedservo
 
 http://forums.trossenrobotics.com/tutorials/how-to-diy-128/get-position-feedback-from-a-standard-hobby-servo-3279/
+
+Error with running node remotely which I had https://answers.ros.org/question/243478/getting-rosgraph-resource-not-found-when-trying-to-get-turtlebot-local_plan/
+
+Rosremote (didn't try) http://wiki.ros.org/ROSRemote
+
+Ros remote machine (didn't try) https://github.com/pandora-auth-ros-pkg/pandora_docs/wiki/Remote-Machines-Running-ROS-nodes
+
+Exception message python https://stackoverflow.com/questions/9823936/python-how-do-i-know-what-type-of-exception-occurred
+
+Add python file to path https://askubuntu.com/questions/470982/how-to-add-a-python-module-to-syspath
+
+ssh python finding module https://stackoverflow.com/questions/6851184/python-cannot-find-module-when-using-ssh
 
 **Sources**			
 
