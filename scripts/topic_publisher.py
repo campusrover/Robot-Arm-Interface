@@ -11,7 +11,7 @@ rospy.init_node('topic_publisher')
 pub = rospy.Publisher('armcommand', String, queue_size=10)
 
 # sleep at rate of loops per second
-rate = rospy.Rate(.5)
+rate = rospy.Rate(.1)
 #command=String()
 #command.data='f'
 command='f'
@@ -22,5 +22,6 @@ while not rospy.is_shutdown():
     if len(command)!=1:
         print "The Message is too big"
     else:
+        print "Arm will do: " +command
         pub.publish(command) 
     rate.sleep()

@@ -3,7 +3,7 @@
 ssh mutant@mutant.dyn.brandeis.edu "bash --login -c 'roscore'"
 ssh mutant@mutant.dyn.brandeis.edu 'source /opt/ros/kinetic/setup.bash;roscore'
 
-ssh mutant@mutant.dyn.brandeis.edu 'source /opt/ros/kinetic/setup.bash;roslaunch turtlebot3_bringup turtlebot3_robot.launch'
+ssh mutant@mutant.dyn.brandeis.edu 'source /opt/ros/kinetic/setup.bash;source ~/catkin_ws/devel/setup.bash;roslaunch turtlebot3_bringup turtlebot3_robot.launch'
 
 
  ssh mutant@mutant.dyn.brandeis.edu 'source /opt/ros/kinetic/setup.bash;export TURTLEBOT3_MODEL=waffle;roslaunch ~/catkin_ws/src/turtlebot3/turtlebot3_bringup/launch/turtlebot3_robot.launch'
@@ -28,3 +28,8 @@ export TB3_MODEL=waffle
 export TURTLEBOT3_MODEL=waffle
 # Test without namespacing
 # export ROS_NAMESPACE=mutant
+
+ssh mutant@mutant.dyn.brandeis.edu 'export ROS_MASTER_URI=http://mutant.dyn.brandeis.edu:11311/;python' < '/home/robot/catkin_ws/src/arminterface/scripts/topic_subscriber.py'
+
+
+`ssh mutant@mutant.dyn.brandeis.edu 'bash' < '/home/robot/catkin_ws/src/arminterface/scripts/mutantStartup.sh'`
