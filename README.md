@@ -109,15 +109,23 @@ By Next week, I will have communicated with Charlie about the battery and broken
 
 ### Nov 8-15
 
-​	Current projects: Charlie is remounting the arm
+Update: Charlie remounted the arm, I wrote the bringup and roscore script and it works over ssh, the arm moves using rostopic publisher and subscriber, subscriber has nice error handling like if usb times out.
 
-​	I'm looking into writing auto boot up ssh script for pi, and gazebo simulation
+Sssh Script problem: It seems that running roscore in ssh command doesn't work even though it works in an interactie session. i tired allowing mutant to allow user environment variables, but the problem persists. Even though i haven't figured anything out, i am learning a lot about linux and how to use vim. I also tried specifying the exact directory location of roscore file, but I go this error https://www.howtoforge.com/vim-basics
 
-Sssh Script problem: It seems that running roscore in ssh command doesn't work even though it works in an interactie session. i tired allowing mutant to allow userenviornment variables, but the problem persists. Even though i haven't figured anything out, i am learning a lot about linux and how to use vim. I also tried specifying hte exact directory location of roscore file, but I go tthis error https://www.howtoforge.com/vim-basics
+Here is a gif of the bash script working, no more opening multiple terminals to run roscore, bringup, and the nodes!
+
+![Terminal while excecuting user friendly bash script to move arm](docs/ROSandBash.gif)
+
+Here is the arm top mounting that Charlie did, now the arm doesn't get in the way of the lidar's field of vision.
+
+![Remounted Arm](docs/TopMountingArm.gif)
+
+Future work: Upload python file remotely, implement ROS actions, implement sensor control.
 
 
 
-Update: I wrote the bringup and roscore scri[t and it works over ssh, the amr moves using orstopic publisher and subscirber, subscriber has nice error handline llike if usb times out. Future work: get subscriber node to run remotly, (I still have to ssh in todo that)
+**Sources**	
 
 SSH Commands manual https://www.freebsd.org/cgi/man.cgi?sshd_config(5)
 
@@ -132,8 +140,6 @@ Non interactive shell information https://www.howtoforge.com/vim-basics https://
 Permit user enviornmet https://stackoverflow.com/questions/10562722/command-not-found-via-ssh-with-single-command-found-after-connecting-to-termina
 
 Remote run ROS https://askubuntu.com/questions/1156507/cannot-perform-command-after-remote-logging-in-via-ssh
-
-
 
 Run remote rs node https://github.com/pandora-auth-ros-pkg/pandora_docs/wiki/Remote-Machines-Running-ROS-nodes
 
@@ -159,9 +165,7 @@ Exception message python https://stackoverflow.com/questions/9823936/python-how-
 
 Add python file to path https://askubuntu.com/questions/470982/how-to-add-a-python-module-to-syspath
 
-ssh python finding module https://stackoverflow.com/questions/6851184/python-cannot-find-module-when-using-ssh
-
-**Sources**			
+ssh python finding module https://stackoverflow.com/questions/6851184/python-cannot-find-module-when-using-ssh		
 
 [1] Links fix Arduino download error https://www.arduino.cc/en/Guide/Linux
 
