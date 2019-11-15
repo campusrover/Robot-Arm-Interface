@@ -8,7 +8,7 @@ import time
 import serial
 from std_msgs.msg import String
 
-
+print("mark")
 
 # define function is called each time the message is published (by some other node)
 def callback(msg):
@@ -25,7 +25,7 @@ def sendCommand (characterCommand):
 		print ("\tElement did not respond in time")
 	print("")
 try:
-	ser=serial.Serial("/dev/ttyUSB4",9600,timeout=5)	
+	ser=serial.Serial("/dev/ttyUSB1",9600,timeout=5)	
 	ser.baudrate=9600
 	print("Starting Serial Connection")
 
