@@ -5,17 +5,21 @@
 # and enter the commands
 
 #create variable for window coordinate
-count="0"
+#count="0"
 #launch roscore in other terminal and wait for it to start up
-gnome-terminal --geometry 73x31+$count+0 -- /bin/sh -c 'export ROS_MASTER_URI=http://localhost:11311;roscore'
-sleep 2
+#gnome-terminal --geometry 73x31+$count+0 -- /bin/sh -c 'export ROS_MASTER_URI=http://localhost:11311;roscore'
+#sleep 2
 #loop through every python file in program
-for f in *.py; do 
+#for f in *.py; do 
    #increment count by fixed amount so new window starts in new place
-    count=`expr "$count" + "200"`
+#    count=`expr "$count" + "200"`
     #give file permissions and run python file
-    gnome-terminal --geometry 73x31+$count+0 -- /bin/sh -c 'export ROS_MASTER_URI=http://localhost:11311;chmod +x '$f';python '$f
-done
+#    gnome-terminal --geometry 73x31+$count+0 -- /bin/sh -c 'export ROS_MASTER_URI=http://localhost:11311;chmod +x '$f';python '$f
+#done
 #close terminal windows after X  seconds
-sleep 200
-pkill gnome-terminal-
+#sleep 200
+#pkill gnome-terminal-
+
+#gnome-terminal --geometry 73x31+$count+0 -- /bin/sh -c 'export ROS_MASTER_URI=http://localhost:11311;roscore'
+gnome-terminal -e 'sh -c "~/catkin_ws/src/arminterface/scripts;python topic_publisher.py"'
+ssh mutant@mutant.dyn.brandeis.edu 'bash' < '/home/robot/catkin_ws/src/arminterface/scripts/mutantStartup.sh'
