@@ -1,12 +1,21 @@
 #run with ssh mutant@mutant.dyn.brandeis.edu 'bash' < '/home/robot/catkin_ws/src/arminterface/scripts/mutantStartup.sh'
+#requires gnome terminal and topic subscriber to be installed on pi (as well as ROS)
+echo Initializing Setup Variables
 export ROS_MASTER_URI=http://mutant.dyn.brandeis.edu:11311/
 source /opt/ros/kinetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
-roscore & roslaunch --wait turtlebot3_bringup turtlebot3_robot.launch 
-#make sure local program is updated
+export DISPLAY=:0.0
+
+
+echo Starting Roscore and Bringup
+gnome-terminal -e "roscore & roslaunch --wait turtlebot3_bringup turtlebot3_robot.launch"
+echo Updating Script on Rasberry Pi
 sourceDir=~/catkin_ws/src/Robot-Arm-Interface/
 fileName=scripts/topic_subscriber.py
-cd sourceDir
+cd $sourceDir
 git pull
+echo Printing USB Connections
+ls /dev/ttyUSB*
+echo Starting Local Node
 python $sourceDir$fileName
 #ssh mutant@mutant.dyn.brandeis.edu 'python' < '/home/robot/catkin_ws/src/arminterface/scripts/topic_subscriber.py'

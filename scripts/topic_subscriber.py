@@ -1,6 +1,7 @@
 #!/usr/bin/env python
+import os,sys
+sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 1) # line buffering
 
-import sys
 sys.path.append("/opt/ros/kinetic/lib/python2.7/dist-packages")
 
 import rospy
