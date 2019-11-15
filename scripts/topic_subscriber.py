@@ -24,7 +24,7 @@ def sendCommand (characterCommand):
 		print ("\tElement did not respond in time")
 	print("")
 try:
-	ser=serial.Serial("/dev/ttyUSB0",9600,timeout=5)	
+	ser=serial.Serial("/dev/ttyUSB2",9600,timeout=5)	
 	ser.baudrate=9600
 	print("Starting Serial Connection")
 
