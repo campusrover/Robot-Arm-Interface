@@ -123,15 +123,95 @@ Here is the arm top mounting that Charlie did, now the arm doesn't get in the wa
 
 Future work: Upload python file remotely, implement ROS actions, implement sensor control.
 
+#### Running Instructions
 
+1. Get Charged Battery
 
-**Sources**	
+2. Turn Mutant Robot On
+
+3. run `cd ~/catkin_ws/src/arminterface/scripts`
+
+4. run `bash runRos.sh` and follow instructions 
+
+   ### Nov 15-22
+
+   Feedback from testing arm with TA
+
+   ​	roscd
+
+   ​	Explain what publihser subscriber do
+
+   ​	stop unplug replug
+
+   ​	 Time took : 2:18, 2:33
+
+   ​	Be interactive
+
+   ​	Dont continue usb if unpluged
+
+   ​	What threw you off the most? new terminal window
+
+   ​			explain what that window does
+
+   ​	Is the command line interface good?
+
+   ​			yeah	
+
+   ​	The API is more important than the user application
+
+   ​	better reset condition
+
+   ​	avoid typing in password
+
+   ​	1:10 usablity 8
+
+   
+   
+   Meeting with Pito :
+   
+   ​		I need to write a generic and reliable ROS node and not get sucked in to 
+   
+   ​		Get to coordinate engage, write this so you could use it for a different arm
+   
+   ​		Then maybe write an action.
+   
+   ​		Add Ultrasonic Sensor
+   
+   ​		Possibly write angle information.
+   
+   ​		Main priorities: generic interface, ultrasonic sensor, and fun demo 
+   
+   
+   
+   General Interface:
+   
+   ​	The things we need to do: send commands
+   
+   
+   
+   | Goal                | Arduino Command                       | Inputs other than Name | Outputs      | Wait | Comment                 |
+   | ------------------- | ------------------------------------- | ---------------------- | ------------ | ---- | ----------------------- |
+   | Get Distance        | distancesensor.getDistance();         |                        | Distance     | No   | Type Output Sensor      |
+   | Set Arm Coordinates | set_arm(100, 200, 90, 0  servoSpeed); | 4 coordinates, speed   | Still Moving | Yes  | Type 4 Coordinate       |
+   | Set Manipulator     | manipulator(true =open/false =code);  | open or close          | Still Moving | Yes  | Type Binary Manipulator |
+   
+   ROS outline
+   
+   ​	Node: Publish distance to topic 
+   
+   ​	Action: Control arm and manipulator (one or two actions)
+   
+   Then I have a node publishing Arduin commands, which keeps the Arduino code pure	
+   
+   ### Sources**	
+   
+5. 
 
 SSH Commands manual https://www.freebsd.org/cgi/man.cgi?sshd_config(5)
 
 Edit read only file in vimhttps://www.geekyboy.com/archives/629
 
-Hoe to use vim https://www.howtoforge.com/vim-basics
+How to use vim https://www.howtoforge.com/vim-basics
 
 Links http://gazebosim.org/tutorials/?tut=ros_urdf http://wiki.ros.org/joint_trajectory_controller Pito doesn;t like https://answers.ros.org/question/38694/running-ros-across-multiple-machines/
 
