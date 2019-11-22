@@ -12,7 +12,7 @@ echo Starting Roscore and Bringup
 #gnome-terminal -e "roscore & roslaunch --wait turtlebot3_bringup turtlebot3_robot.launch"
 gnome-terminal -e 'sh -c "roscore & roslaunch --wait turtlebot3_bringup turtlebot3_robot.launch"'
 sleep 10
-echo Please Unplug and Replug USB connected to Arm
+echo Please Unplug USB connected to Arm, wait 2 seconds, and Replug
 sleep 15
 echo Updating Script on Rasberry Pi
 sourceDir=~/catkin_ws/src/Robot-Arm-Interface/
