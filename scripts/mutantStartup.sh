@@ -17,6 +17,8 @@ sourceDir=~/catkin_ws/src/Robot-Arm-Interface/
 fileName=scripts/topic_subscriber.py
 cd $sourceDir
 git pull
+echo Please Unplug and Replug USB connected to Arm
+sleep 15
 echo Printing USB Connections
 ls /dev/ttyUSB*
 echo Starting Local Node

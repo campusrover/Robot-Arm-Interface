@@ -17,12 +17,9 @@ def callback(msg):
 
 def sendCommand (characterCommand):
 	ser.write(characterCommand)
-	#
-	bytes=ser.readline()
-	data = ":".join("{:02x}".format(ord(c)) for c in bytes)
-	#
-	if data:
-		print ("\tARM:"+ data)
+	response=ser.readline()
+	if response:
+		print ("\tARM:"+ response)
 	else:
 		print ("\tElement did not respond in time")
 	print("")
