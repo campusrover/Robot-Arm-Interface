@@ -1,6 +1,0 @@
-
-#Start ROS on mutant and run bringup
-`ssh mutant@mutant.dyn.brandeis.edu 'bash' < '/home/robot/catkin_ws/src/arminterface/scripts/mutantStartup.sh'`
-
-#run the topic subscriber node
-ssh mutant@mutant.dyn.brandeis.edu 'export ROS_MASTER_URI=http://mutant.dyn.brandeis.edu:11311/;python' < '/home/robot/catkin_ws/src/arminterface/scripts/topic_subscriber.py'

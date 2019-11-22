@@ -8,7 +8,6 @@ import rospy
 import time
 import serial
 from std_msgs.msg import String
-print ("test update success")
 
 # define function is called each time the message is published (by some other node)
 def callback(msg):
@@ -23,7 +22,7 @@ def sendCommand (characterCommand):
 	data = ":".join("{:02x}".format(ord(c)) for c in bytes)
 	#
 	if data:
-		print ("\tARM:"+ response)
+		print ("\tARM:"+ data)
 	else:
 		print ("\tElement did not respond in time")
 	print("")

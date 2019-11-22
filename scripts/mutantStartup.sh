@@ -18,9 +18,6 @@ fileName=scripts/topic_subscriber.py
 cd $sourceDir
 git pull
 echo Printing USB Connections
-sudo /etc/init.d/udev restart
-delay 5
 ls /dev/ttyUSB*
 echo Starting Local Node
 python $sourceDir$fileName
-#ssh mutant@mutant.dyn.brandeis.edu 'python' < '/home/robot/catkin_ws/src/arminterface/scripts/topic_subscriber.py'
