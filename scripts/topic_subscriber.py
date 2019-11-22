@@ -32,6 +32,7 @@ try:
 	print("PI:Starting Sequence")
 	#consume Arduino wellcome message
 	print(ser.readline())
+	print(ser.readline())
 
 	rospy.init_node('topic_subscriber')
 	sub = rospy.Subscriber('armcommand', String, callback)
