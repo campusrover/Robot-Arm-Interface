@@ -210,7 +210,20 @@ Future work: Upload python file remotely, implement ROS actions, implement senso
 
    ​	Another problem is that other students need to use the robot with an arm on it. I want to take off the arm so it can work on any robot anyway, but I need to fix the ssh error. 
 
+Pito agrees with this serial interface scheme : ![Serial Interface Scheme](docs/Serial Diagram.jpg)
+
    https://forum.arduino.cc/index.php?topic=396450
+
+Setting up simple action example file in my program. Ran it in prrexamples, finishes prints elapsed time. Edited cmake and package. 
+
+​	Ismoving, atttaches limits, stop
+
+​		limits dont seem to work
+
+​		Reason is the limits are in microseconds not angles, here is the conversion from the cpp file of th VarSPeed Srvo class
+
+![Convert angle to Microseconds](/home/robot/catkin_ws/src/arminterface/docs/ServoAngleConversion.png)
+
    ### Sources**	
 
 5. 
