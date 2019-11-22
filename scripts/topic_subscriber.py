@@ -17,12 +17,16 @@ def callback(msg):
 
 def sendCommand (characterCommand):
 	ser.write(characterCommand)
-	response=ser.readline()
-	if response:
+	#
+	bytes=ser.readline()
+	data = ":".join("{:02x}".format(ord(c)) for c in bytes)
+	#
+	if data:
 		print ("\tARM:"+ response)
 	else:
 		print ("\tElement did not respond in time")
 	print("")
+
 try:
 	ser=serial.Serial("/dev/ttyUSB0",9600,timeout=5)	
 	ser.baudrate=9600
@@ -30,7 +34,6 @@ try:
 
 	print("PI:Starting Sequence")
 	#consume Arduino wellcome message
-	print(ser.readline())
 	print(ser.readline())
 
 	rospy.init_node('topic_subscriber')

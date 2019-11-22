@@ -203,6 +203,10 @@ Future work: Upload python file remotely, implement ROS actions, implement senso
    
    Then I have a node publishing Arduin commands, which keeps the Arduino code pure	
    
+   https://raspberrypi.stackexchange.com/questions/13455/how-to-force-rescan-of-usb-serial-devices
+   
+   https://stackoverflow.com/questions/41560818/usb-serial-data-sending-gibberish
+   
    ### Sources**	
    
 5. 
