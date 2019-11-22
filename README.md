@@ -207,6 +207,10 @@ Future work: Upload python file remotely, implement ROS actions, implement senso
    
    https://stackoverflow.com/questions/41560818/usb-serial-data-sending-gibberish
    
+   2:15 PM: Pito says I'll have a serial Node which publishers serial data, then another ROS node which parses the data. Pito Recommends that I use a struct instead of plain text. 
+   
+   ​	Another problem is that other students need to use the robot with an arm on it. I want to take off the arm so it can work on any robot anyway, but I need to fix the ssh error. 
+   
    ### Sources**	
    
 5. 
