@@ -8,6 +8,7 @@ import rospy
 import time
 import serial
 from std_msgs.msg import String
+print ("test update success")
 
 # define function is called each time the message is published (by some other node)
 def callback(msg):
