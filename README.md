@@ -207,6 +207,8 @@ Future work: Upload python file remotely, implement ROS actions, implement senso
    
    https://stackoverflow.com/questions/41560818/usb-serial-data-sending-gibberish
    
+   https://forum.arduino.cc/index.php?topic=396450
+   
    ### Sources**	
    
 5. 
