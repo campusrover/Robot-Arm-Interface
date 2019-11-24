@@ -206,30 +206,45 @@ Future work: Upload python file remotely, implement ROS actions, implement senso
    https://raspberrypi.stackexchange.com/questions/13455/how-to-force-rescan-of-usb-serial-devices
    
    https://stackoverflow.com/questions/41560818/usb-serial-data-sending-gibberish
-   
+      2:15 PM: Pito says I'll have a serial Node which publishers serial data, then another ROS node which parses the data. Pito Recommends that I use a struct instead of plain text. 
+
+   ​	Another problem is that other students need to use the robot with an arm on it. I want to take off the arm so it can work on any robot anyway, but I need to fix the ssh error. 
+
+Pito agrees with this serial interface scheme : ![Serial Interface Scheme](docs/Serial Diagram.jpg)
+
    https://forum.arduino.cc/index.php?topic=396450
+
    
-   
-   
+
    Trying to get Servo to tell my if its moving. I set the servo to run for 2 seconds at degree increments, and print whether it was moving. There would  be a spike at 40 and 160 if this method actually could tell if the servo was moving.
-   
+
    ![Terminal Output showing how isMoving function outputs](docs/ServoIsMoving.png)
+
    
-   
-   
+
    Plotting the number of times the servo moved by different degrees shows that there is no correlation between where the servo is jammed and what the isMoving function returns.
-   
+
    ​	![Chart showing isMoving method](docs/isMovingChart.jpg)
-   
+
    This agrees with what Charly said about the servos having no feedback, but I thought a function named isMoving would return whether the servo is moving. In summary, the servo functions I thought would work don't really.
-   
+
    ### **Sources**	
-   
-   
 
+  
 
+Setting up simple action example file in my program. Ran it in prrexamples, finishes prints elapsed time. Edited cmake and package. 
 
+​	Ismoving, atttaches limits, stop
 
+​		limits dont seem to work
+
+​		Reason is the limits are in microseconds not angles, here is the conversion from the cpp file of th VarSPeed Srvo class
+
+![Convert angle to Microseconds](/home/robot/catkin_ws/src/arminterface/docs/ServoAngleConversion.png)
+
+   ### Sources**	
+
+5. 
 
 SSH Commands manual https://www.freebsd.org/cgi/man.cgi?sshd_config(5)
 
