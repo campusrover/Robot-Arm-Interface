@@ -21,17 +21,28 @@ void setup() {
   Serial.begin(9600);
   delay(2000);
   //attach finger
-
   //display welcome message
   Serial.println("Welcome to Servo Extra Program");
-  Serial.println(angletoTime(0));
-  Serial.println(angletoTime(90));
-  Serial.println(angletoTime(180));
-  
+  //Serial.println(angletoTime(0));
+  //Serial.println(angletoTime(90));
+  //Serial.println(angletoTime(180));
 
-  //delay(6000);
-  fingerServo.attach(fingerPin,angletoTime(CLOSE),angletoTime(OPEN));
   fingerServo.attach(fingerPin);
+  //initial min and max is 544 2400
+  print("Min",fingerServo.getMin());
+  print("Max",fingerServo.getMax());
+  Serial.println(map(fingerServo.getMin(), 544, 2400, 0, 180));
+  Serial.println(map(fingerServo.getMax(), 544, 2400, 0, 180));
+
+  
+  /*for (int min=0;min<=180;min+=20){
+    Serial.println(min);
+    testWrite(fingerServo,min,180,CLOSE-30);
+    Serial.println();
+  }*/
+  delay(500);
+  exit(0);
+  //fingerServo.attach(fingerPin); 
 }
 
 //runs many times
@@ -73,9 +84,22 @@ void loop() {
 
 }
 
+void print(String message,int value){
+  Serial.print(message);
+  Serial.print(":\t");
+  Serial.println(value);
+}
 
 int angletoTime(int value){
   int pulse= constrain(value, 0, 180);
   pulse= map(value, 0, 180, 544, 2400);
   return pulse;
+}
+
+void testWrite(VarSpeedServo servo,int min, int max, int value){
+  servo.attach(fingerPin,angletoTime(min),angletoTime(max));
+  print("Min time servo will go",servo.getMin());
+  servo.write(value,255,false);
+  print("Time Servo is currently going",servo.read());
+  delay(1000);
 }
