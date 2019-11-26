@@ -214,6 +214,30 @@ Pito agrees with this serial interface scheme : ![Serial Interface Scheme](docs/
 
    https://forum.arduino.cc/index.php?topic=396450
 
+   
+
+   Trying to get Servo to tell my if its moving. I set the servo to run for 2 seconds at degree increments, and print whether it was moving. There would  be a spike at 40 and 160 if this method actually could tell if the servo was moving.
+
+   ![Terminal Output showing how isMoving function outputs](docs/ServoIsMoving.png)
+
+   
+
+   Plotting the number of times the servo moved by different degrees shows that there is no correlation between where the servo is jammed and what the isMoving function returns.
+
+   ​	![Chart showing isMoving method](docs/isMovingChart.jpg)
+
+   This agrees with what Charly said about the servos having no feedback, but I thought a function named isMoving would return whether the servo is moving. In summary, the servo functions I thought would work don't really.
+
+
+
+**November 25** : 
+
+​	I wrote ArduinoV6, which uses a serial interface to control Arm position, manipulator, and and return the distance. 
+
+   ### **Sources**	
+
+  
+
 Setting up simple action example file in my program. Ran it in prrexamples, finishes prints elapsed time. Edited cmake and package. 
 
 ​	Ismoving, atttaches limits, stop
@@ -287,3 +311,6 @@ ssh python finding module https://stackoverflow.com/questions/6851184/python-can
 
 [4] Run a Python File remotely https://www.shellhacks.com/ssh-execute-remote-command-script-linux/
 
+Strings don't work in Arduino aarg post https://forum.arduino.cc/index.php?topic=387175.0
+
+Servo min max writing https://forum.arduino.cc/index.php?topic=169501.0
