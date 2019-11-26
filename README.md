@@ -228,6 +228,12 @@ Pito agrees with this serial interface scheme : ![Serial Interface Scheme](docs/
 
    This agrees with what Charly said about the servos having no feedback, but I thought a function named isMoving would return whether the servo is moving. In summary, the servo functions I thought would work don't really.
 
+
+
+**November 25** : 
+
+​	I wrote ArduinoV6, which uses a serial interface to control Arm position, manipulator, and and return the distance. 
+
    ### **Sources**	
 
   

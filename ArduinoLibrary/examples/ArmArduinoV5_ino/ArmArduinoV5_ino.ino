@@ -31,13 +31,13 @@ boolean firstWord = true;
 void setup() {
   //intialize serial connection
   Serial.begin(9600);
-  delay(2000);
+  while(!Serial){}
   //attach finger
   distanceSensor.begin(2, 3);
   fingerServo.attach(fingerPin);
   //display welcome message
   Serial.println("Welcome to Arm Control");
-  Serial.println("Enter ARM x y z w MANIP 1/0 or DIST");
+  Serial.println("Enter ARM x y z w MANIP 1/0");
 }
 
 //runs many times
@@ -107,11 +107,14 @@ void process() {
     return;
   }
 
-  Serial.print("FLAG:");
-    Serial.println(newData);
+  //Serial.print("FLAG:");
+   // Serial.println(newData);
 
   //otherwise, process the request
   if (newData == FIRSTWORD) {
+    if(strcmp(receivedChars, "ARM")==0){
+       Serial.println("PP");
+    }
     Serial.print(receivedChars);
   } else if (newData == NUMBER | newData == NEWLINE) {
     Serial.print(":");
