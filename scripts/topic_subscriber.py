@@ -18,14 +18,24 @@ def callback(msg):
 def sendCommand (characterCommand):
 	ser.write(characterCommand)
 	response=ser.readline()
-	if response:
-		print ("\tARM:"+ response)
-	else:
-		print ("\tElement did not respond in time")
+	#if there was no response, update variable to default message
+	if not response:
+		response="\tElement did not respond in time"
+	serialPub.publish(response)
+	print(response)
 	print("")
 
+# Make this into a ROS node.
+rospy.init_node('arminterface')
+
+#subscribe to arm command topic
+sub = rospy.Subscriber('armcommand', String, callback)
+# Prepare to publish topic `counter`
+serialPub = rospy.Publisher('armresponse', String, queue_size=10)
+
 try:
-	ser=serial.Serial("/dev/ttyUSB0",9600,timeout=5)	
+	#intialize serial connection
+	ser=serial.Serial("/dev/ttyUSB1",9600,timeout=5)	
 	ser.baudrate=9600
 	print("Starting Serial Connection")
 
@@ -34,12 +44,12 @@ try:
 	print(ser.readline())
 	print(ser.readline())
 	print(ser.readline())
-
-	rospy.init_node('topic_subscriber')
-	sub = rospy.Subscriber('armcommand', String, callback)
-
-	# Wait for published topics, exit on ^c
+	
+	#publih distance
+	serialPub.publish("First Publish")
+	# wait
 	rospy.spin()
+
 except serial.SerialException as ex:
 	print ("USB Not Plugged in")
 	time.sleep(5)

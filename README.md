@@ -248,6 +248,17 @@ Setting up simple action example file in my program. Ran it in prrexamples, fini
 
 ![Convert angle to Microseconds](/home/robot/catkin_ws/src/arminterface/docs/ServoAngleConversion.png)
 
+
+
+#### Running Instructions
+
+1. Get Charged Battery
+2. Turn Mutant Robot On
+3. run  `roscd arminterface/scripts`
+4. run `bash runRos.sh` and follow instructions 
+
+Tested running einstctuions withTS< they are better
+
    ### Sources**	
 
 5. 

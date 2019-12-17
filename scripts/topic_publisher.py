@@ -1,8 +1,7 @@
 #!/usr/bin/env python
-# Don't forget to chmod +x topic_publisher.py
+#Publishes Commands to ROS ARM in format below
 
 import rospy
-import random
 from std_msgs.msg import String
 
 # Make this into a ROS node.
@@ -12,19 +11,19 @@ rospy.init_node('topic_publisher')
 pub = rospy.Publisher('armcommand', String, queue_size=10)
 
 # sleep at rate of loops per second
-rate = rospy.Rate(.1)
-#command=String()
-#command.data='f'
-command='f'
-
-
+rate = rospy.Rate(.25)
+commands= ["MANIP 1 \n","ARM 0 330 0 20 \n","MANIP 0 \n","MANIP 2 \n","ARM 0 0 60 20 \n"]
+index=0
 # loop until ^c
 while not rospy.is_shutdown():
-    #make command random
-    command=random.choice("sfb")
-    if len(command)!=1:
-        print "The Message is too big"
+    #iterates through list of commands
+    command=commands[index]
+    if index==len(commands)-1:
+       index=0 
     else:
-        print "Arm will do: " +command
-        pub.publish(command) 
+        index=index+1
+        
+
+    print "Arm will do: " +command
+    pub.publish(command) 
     rate.sleep()
